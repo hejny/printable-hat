@@ -5,7 +5,8 @@ include <hatBended.scad>
  */
 module hatSlice(
     clothThickness,
-    slices,
+    slicesCount,
+    sliceNumber,
     hatBaseDiameter,
     hatRoofDiameter,
     hatHeight
@@ -14,12 +15,16 @@ module hatSlice(
 
     rotate([-90,0,0]){
         difference(){
-            hatBended(
-                clothThickness = clothThickness,
-                hatBaseDiameter = hatBaseDiameter,
-                hatRoofDiameter = hatRoofDiameter,
-                hatHeight = hatHeight
-            );
+
+            
+            rotate([0,0,((360/slicesCount)*(sliceNumber+0))]){
+                hatBended(
+                    clothThickness = clothThickness,
+                    hatBaseDiameter = hatBaseDiameter,
+                    hatRoofDiameter = hatRoofDiameter,
+                    hatHeight = hatHeight
+                );
+            }
 
         
             union(){
@@ -29,7 +34,7 @@ module hatSlice(
                     }
                 }
 
-                rotate([0,0,180-(360/slices)]){
+                rotate([0,0,180-(360/slicesCount)]){
                     translate([0,333/2,0]){
                         cube([333,333,333],center=true);
                     }

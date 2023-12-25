@@ -3,7 +3,7 @@
 /**
  * A hat to suit / cowboy-like hat with a flat top and a wide brim
  */
-module hat(
+module hatSimple(
     clothThickness,
     hatBaseDiameter,
     hatRoofDiameter,

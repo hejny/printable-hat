@@ -1,41 +1,20 @@
-
+include <config.scad>
 
 /*/
-// Smooth
-$fn=400;
-/**/
-
-/**/
-// Draft
-$fn=35;
-/**/
-
-clothThickness = 4;
-scale = 1;
-
-hatBaseDiameter = 200 * scale;
-hatRoofDiameter = 80 * scale;
-hatHeight = 55 * scale;
-
-
-slices = 7;
-
-
-
-/**/
-// To print
+// To preview print
 include <shapes/hatSlice.scad>
 hatSlice(
     clothThickness = clothThickness,
-    slices = slices,
+    slicesCount = 6,
+    sliceNumber = 0,
     hatBaseDiameter = hatBaseDiameter,
     hatRoofDiameter = hatRoofDiameter,
     hatHeight = hatHeight
 );
 /**/
 
-/*/
-// To test
+//
+// To preview the hat
 include <shapes/hatBended.scad>
 hatBended(
     clothThickness = clothThickness,
@@ -46,9 +25,9 @@ hatBended(
 /**/
 
 /*/
-// To test
-include <shapes/hat.scad>
-hat(
+// To test basic shape
+include <shapes/hatSimple.scad>
+hatSimple(
     clothThickness = clothThickness,
     hatBaseDiameter = hatBaseDiameter,
     hatRoofDiameter = hatRoofDiameter,

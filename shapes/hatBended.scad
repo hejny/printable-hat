@@ -1,6 +1,6 @@
 
 include <../modules/bend/bend.scad>
-include <hat.scad>
+include <hatSimple.scad>
 
 /**
  * A bended hat
@@ -19,10 +19,10 @@ module hatBended(
             cylindric_bend(
                 dimensions = hatDimensions,
                 radius= 200,
-                nsteps = 10
+                nsteps = $fn*1
             ){
                 translate([hatBaseDiameter/2, hatBaseDiameter/2, 0]){
-                    hat(
+                    hatSimple(
                         clothThickness = clothThickness,
                         hatBaseDiameter = hatBaseDiameter,
                         hatRoofDiameter = hatRoofDiameter,
