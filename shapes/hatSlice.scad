@@ -1,4 +1,4 @@
-include <hatUnsliced.scad>
+include <hatBended.scad>
 
 /**
  * A puzzle piece to slice the hat into printable pieces
@@ -10,16 +10,18 @@ module hatSlice(
     hatRoofDiameter,
     hatHeight
 ) {
+    
 
     rotate([-90,0,0]){
-        difference() {
-            hat(
+        difference(){
+            hatBended(
                 clothThickness = clothThickness,
                 hatBaseDiameter = hatBaseDiameter,
                 hatRoofDiameter = hatRoofDiameter,
-                hatHeigh = hatHeight
+                hatHeight = hatHeight
             );
 
+        
             union(){
                 rotate([0,0,0]){
                     translate([0,333/2,0]){
@@ -33,8 +35,9 @@ module hatSlice(
                     }
                 }
             }
-        
+          
         }
+              
     }
 
 }
