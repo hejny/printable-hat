@@ -14,11 +14,13 @@ module hatBended(
 
     hatDimensions = [hatBaseDiameter, hatBaseDiameter, hatHeight];
 
-    translate([-hatBaseDiameter/2, -hatBaseDiameter/2, 27]){
+    scale = hatBaseDiameter/200;
+
+    translate([-hatBaseDiameter/2, -hatBaseDiameter/2, 27*scale]){
         rotate([-30,0,0]){
             cylindric_bend(
                 dimensions = hatDimensions,
-                radius= 200,
+                radius= 200*scale,
                 nsteps = $fn*1
             ){
                 translate([hatBaseDiameter/2, hatBaseDiameter/2, 0]){

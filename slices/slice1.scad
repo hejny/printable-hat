@@ -1,3 +1,4 @@
+scale = 1;
 
 include <../config.scad>
 include <../shapes/hatSlice.scad>

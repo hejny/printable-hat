@@ -1,3 +1,7 @@
+
+scale = 0.3;
+
+
 include <config.scad>
 
 /*/

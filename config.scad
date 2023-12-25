@@ -1,20 +1,18 @@
 
-
 /**/
 // Smooth
-$fn=400;
+$fn=400*scale;
 /**/
 
 /*/
 // Draft
-$fn=35;
+$fn=35*scale;
 /**/
 
 clothThickness = 4;
-scale = 1;
 
-hatBaseDiameter = 200 * scale;
-hatRoofDiameter = 80 * scale;
-hatHeight = 55 * scale;
+hatBaseDiameter = 330 * scale;
+hatRoofDiameter = 170 * scale;
+hatHeight = 95 * scale;
 
 
