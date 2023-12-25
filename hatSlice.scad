@@ -13,12 +13,11 @@ module hatSlice(
 
     rotate([-90,0,0]){
         difference() {
-            hatUnsliced(
-                clothThickness,
-                hatBaseDiameter,
-                hatRoofDiameter,
-                hatHeight
-
+            hat(
+                clothThickness = clothThickness,
+                hatBaseDiameter = hatBaseDiameter,
+                hatRoofDiameter = hatRoofDiameter,
+                hatHeigh = hatHeight
             );
 
             union(){

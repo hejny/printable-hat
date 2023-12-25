@@ -1,14 +1,14 @@
 include <hatUnsliced.scad>
 include <hatSlice.scad>
 
-/**/
-// Draft
-$fn=20;
-/**/
-
 /*/
 // Smooth
 $fn=400;
+/**/
+
+/**/
+// Draft
+$fn=20;
 /**/
 
 clothThickness = 2;
@@ -23,15 +23,26 @@ slices = 7;
 
 
 
+/*/
+// To print
 hatSlice(
-    clothThickness,
-    slices,
-    hatBaseDiameter,
-    hatRoofDiameter,
-    hatHeight
+    clothThickness = clothThickness,
+    slices = slices,
+    hatBaseDiameter = hatBaseDiameter,
+    hatRoofDiameter = hatRoofDiameter,
+    hatHeigh = hatHeight
 );
+/**/
 
-
+/**/
+// To test
+hat(
+    clothThickness = clothThickness,
+    hatBaseDiameter = hatBaseDiameter,
+    hatRoofDiameter = hatRoofDiameter,
+    hatHeight = hatHeight
+);
+/**/
 
 
 
