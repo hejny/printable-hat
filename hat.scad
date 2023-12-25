@@ -1,8 +1,14 @@
 
 
-// $fn=20;
-$fn=400;
+/**/
+// Draft
+$fn=20;
+/**/
 
+/*/
+// Smooth
+$fn=400;
+/**/
 
 clothThickness = 2;
 scale = 0.2;
@@ -12,6 +18,7 @@ hatRoofDiameter = 100 * scale;
 hatHeight = 100 * scale;
 
 
+slices = 7;
 
 
 /**
@@ -27,25 +34,43 @@ module hat() {
         }
 
         translate([0,0,-clothThickness]){
-            cylinder(r=hatRoofDiameter-(2*clothThickness),h=hatHeight);
+            cylinder(r=hatRoofDiameter-clothThickness,h=hatHeight);
         }
     }
 
 
+}
 
 
+/**
+ * A puzzle piece to slice the hat into printable pieces
+ */
+module hatSlice() {
 
+    rotate([-90,0,0]){
+        difference() {
+            hat();
 
+            union(){
+                rotate([0,0,0]){
+                    translate([0,333/2,0]){
+                        cube([333,333,333],center=true);
+                    }
+                }
 
-    
-    
-   
-
-  
+                rotate([0,0,180-(360/slices)]){
+                    translate([0,333/2,0]){
+                        cube([333,333,333],center=true);
+                    }
+                }
+            }
+        
+        }
+    }
 
 }
 
 
 
 
-hat();
+hatSlice();
